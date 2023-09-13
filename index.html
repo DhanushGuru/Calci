@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      
+    }
+    #main{
+      background: #000;
+      border-radius: 20px;
+      padding : 10px
+    }
+
+    input{
+      border-radius: 10px;
+      height: 30px;
+      width: 140px;
+    }
+
+    #Go{
+      border-radius: 10px;
+    }
+
+    button{
+      height: 40px;
+      width: 40px;
+      margin-top: 10px;
+      margin-right:10px ;
+    }
+    
+    
+  </style>
+  <body>
+    <div id="main" >
+      <div>
+        <input id="inputBox" type="text" name="number" />
+        <button id="Go" onclick="go()">Go</button>
+      </div>
+      <div id="num">
+        <div>
+          <button onclick="handldeElement(event)">1</button>
+          <button onclick="handldeElement(event)">2</button>
+          <button onclick="handldeElement(event)">3</button>
+        </div>
+        <div>
+          <button onclick="handldeElement(event)">4</button>
+          <button onclick="handldeElement(event)">5</button>
+          <button onclick="handldeElement(event)">6</button>
+        </div>
+        <div>
+          <button onclick="handldeElement(event)">7</button>
+          <button onclick="handldeElement(event)">8</button>
+          <button onclick="handldeElement(event)">9</button>
+        </div>
+        <div>
+          <button onclick="handldeElement(event)">+</button>
+          <button onclick="handldeElement(event)">0</button>
+          <button onclick="handldeElement(event)">-</button>
+        </div>
+        <div>
+            <button onclick="handldeElement(event)">*</button>
+            <button onclick="handldeElement(event)">/</button>
+            <button onclick="handldeElement(event)">.</button>
+          </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const inputArea = document.querySelector("input");
+    let text = "";
+    function handldeElement(e) {
+      text += e.target.textContent;
+      inputArea.value = text;
+    }
+    
+    function go(e){
+        const result=eval(text);
+        inputArea.value = result;
+        text = "";
+    }
+
+  </script>
+</html>
